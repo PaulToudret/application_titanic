@@ -32,6 +32,7 @@ def split_train_test(data, test_size, train_path="train.csv", test_path="test.cs
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size)
 
     if train_path:
+<<<<<<< HEAD
         pd.concat([X_train, y_train], axis = 1).to_parquet(train_path)
     if test_path:
         pd.concat([X_test, y_test], axis = 1).to_parquet(test_path)
@@ -39,6 +40,15 @@ def split_train_test(data, test_size, train_path="train.csv", test_path="test.cs
     return X_train, X_test, y_train, y_test
 
 @logger.catch
+=======
+        pd.concat([X_train, y_train], axis = 1).to_csv(train_path)
+    if test_path:
+        pd.concat([X_test, y_test], axis = 1).to_csv(test_path)
+
+    return X_train, X_test, y_train, y_test
+
+
+>>>>>>> bb4e3bc4d37221391566e568dce26300c75bf685
 def create_pipeline(
     n_trees,
     numeric_features=["Age", "Fare"],
