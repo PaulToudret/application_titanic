@@ -1,6 +1,8 @@
+fastapi
 pandas
 PyYAML
 scikit-learn
 python-dotenv
 loguru
 pyarrow
+uvicorn
