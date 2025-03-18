@@ -10,6 +10,7 @@ from loguru import logger
 import pathlib
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from joblib import dump
 
 from src.pipeline.build_pipeline import create_pipeline
 from src.models.train_evaluate import evaluate_model
@@ -72,6 +73,9 @@ pipe = create_pipeline(
 # ESTIMATION ET EVALUATION ----------------------
 
 pipe.fit(X_train, y_train)
+
+with open("model.joblib", "wb") as f:
+    dump(pipe, f, protocol=5)
 
 
 # Evaluate the model
