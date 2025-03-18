@@ -5,3 +5,5 @@ python-dotenv
 pyarrow
 fastapi
 uvicorn
+loguru
+dotenv
